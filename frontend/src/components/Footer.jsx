@@ -1,10 +1,17 @@
-
 const Footer = () => {
   return (
-    <div>
-      <h1>Footer</h1>
-    </div>
-  )
-}
+    <footer>
+      <div>
+        <p>© {new Date().getFullYear()} SkillHub</p>
 
-export default Footer
+        <nav>
+          <a href="#">Sobre</a>
+          <a href="#">Contato</a>
+          <a href="#">Privacidade</a>
+        </nav>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
