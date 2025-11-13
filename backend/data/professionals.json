@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Ana Souza",
+    "role": "Desenvolvedora Front-End",
+    "area": "Web",
+    "city": "São Paulo",
+    "techs": ["React", "Tailwind", "JavaScript"]
+  },
+  {
+    "id": 2,
+    "name": "Bruno Oliveira",
+    "role": "Engenheiro de Dados",
+    "area": "Data",
+    "city": "Curitiba",
+    "techs": ["Python", "SQL", "BigQuery"]
+  },
+  {
+    "id": 3,
+    "name": "Clara Martins",
+    "role": "UX/UI Designer",
+    "area": "Design",
+    "city": "Recife",
+    "techs": ["Figma", "Prototipagem"]
+  },
+  {
+    "id": 4,
+    "name": "Diego Ramos",
+    "role": "Cientista de Dados",
+    "area": "Data",
+    "city": "Belo Horizonte",
+    "techs": ["Python", "Machine Learning"]
+  },
+  {
+    "id": 5,
+    "name": "Eduarda Lima",
+    "role": "Especialista em Segurança",
+    "area": "Security",
+    "city": "Porto Alegre",
+    "techs": ["Pentest", "Firewall", "Linux"]
+  },
+  {
+    "id": 6,
+    "name": "Felipe Rocha",
+    "role": "DevOps Engineer",
+    "area": "Cloud",
+    "city": "São Paulo",
+    "techs": ["Docker", "AWS", "CI/CD"]
+  }
+]
