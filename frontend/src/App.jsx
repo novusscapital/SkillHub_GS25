@@ -25,7 +25,7 @@ function App() {
       <main>
         <div>
           {/* PROCURAR PROFISSIONAL (NOME ) */}
-          <div>
+          <filter>
             {/* FILTROS */}
             <select value={area} onChange={(e) => setArea(e.target.value)}>
               <option value="">Todas</option>
@@ -63,7 +63,7 @@ function App() {
               <option>Docker</option>
               <option>Figma</option>
             </select>
-          </div>
+          </filter>
 
           <label>
             <input
@@ -80,8 +80,6 @@ function App() {
           <CareersCards filters={filters} />
         </article>
       </main>
-
-      <div></div>
 
       <Footer />
     </>
