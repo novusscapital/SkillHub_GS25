@@ -40,7 +40,7 @@ const CareersCards = ({ filters }) => {
   return (
     <section>
       <h2>Profissionais em Destaque</h2>
-      <button onClick={randomizeProfiles}>🔄 Aleatorizar</button>
+      <button onClick={randomizeProfiles}>Aleatorizar</button>
 
       {displayed.length === 0 ? (
         <p>Nenhum profissional encontrado.</p>
