@@ -1,9 +1,22 @@
 
 const Profile = () => {
     return (
-        <div>
-            <h1>ProfilePage</h1>
-        </div>
+    <>
+    <main>
+        {/* CONTÉUDO PRINCIPAL */}
+        <box>
+            <input
+            type="text"
+            placeholder="username"
+            />
+            {/* INFORMAÇÕES PESSOAIS/ACADÊMICAS */}
+            <label>
+                Idade:
+                
+            </label>
+        </box>
+    </main>
+    </>
     )
 }
 
