@@ -5,6 +5,9 @@ import Careers from "./components/Careers";
 import CareersCards from "./components/CareersCards";
 
 function App() {
+  // estado do usuário logado (null = deslogado)
+  const [user, setUser] = useState(null);
+
   // estados dos filtros (controlados)
   const [area, setArea] = useState("");
   const [city, setCity] = useState("");
@@ -16,7 +19,8 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* Header recebe user e setUser */}
+      <Header user={user} setUser={setUser} />
 
       <div>
         <Careers />
@@ -25,7 +29,7 @@ function App() {
       <main>
         <div>
           {/* PROCURAR PROFISSIONAL (NOME ) */}
-          <filter>
+          <div>
             {/* FILTROS */}
             <select value={area} onChange={(e) => setArea(e.target.value)}>
               <option value="">Todas</option>
@@ -63,7 +67,7 @@ function App() {
               <option>Docker</option>
               <option>Figma</option>
             </select>
-          </filter>
+          </div>
 
           <label>
             <input
