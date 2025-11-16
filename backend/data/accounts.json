@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1763244507216,
+    "name": "Neymar Jr",
+    "email": "Neymar@gmail.com",
+    "passwordHash": "$2b$10$/GIV0aUs.m/GgCoRBNcgreCuDxKu7VfuQT88MP2aLD3U3FwrBlcCC"
+  },
+  {
+    "id": 1763246183564,
+    "name": "Ana Souza Faria Lima",
+    "email": "Anasouza@gmail.com",
+    "passwordHash": "$2b$10$c0zc8Up0beupIyeEab4/kOm2SbyLhGukv/5B1Apc1kkeNTnih2bQi"
+  }
+]
