@@ -3,48 +3,180 @@
     "id": 1,
     "name": "Ana Souza",
     "role": "Desenvolvedora Front-End",
-    "area": "Web",
-    "city": "São Paulo",
-    "techs": ["React", "Tailwind", "JavaScript"]
+    "skills": ["React", "Tailwind", "JavaScript"]
   },
   {
     "id": 2,
     "name": "Bruno Oliveira",
     "role": "Engenheiro de Dados",
-    "area": "Data",
-    "city": "Curitiba",
-    "techs": ["Python", "SQL", "BigQuery"]
+    "skills": ["Python", "SQL", "BigQuery"]
   },
   {
     "id": 3,
     "name": "Clara Martins",
     "role": "UX/UI Designer",
-    "area": "Design",
-    "city": "Recife",
-    "techs": ["Figma", "Prototipagem"]
+    "skills": ["Figma", "Prototipagem", "UI Design"]
   },
   {
     "id": 4,
     "name": "Diego Ramos",
     "role": "Cientista de Dados",
-    "area": "Data",
-    "city": "Belo Horizonte",
-    "techs": ["Python", "Machine Learning"]
+    "skills": ["Python", "Machine Learning", "Pandas"]
   },
   {
     "id": 5,
     "name": "Eduarda Lima",
     "role": "Especialista em Segurança",
-    "area": "Security",
-    "city": "Porto Alegre",
-    "techs": ["Pentest", "Firewall", "Linux"]
+    "skills": ["Pentest", "Firewall", "Linux"]
   },
   {
     "id": 6,
     "name": "Felipe Rocha",
     "role": "DevOps Engineer",
-    "area": "Cloud",
-    "city": "São Paulo",
-    "techs": ["Docker", "AWS", "CI/CD"]
+    "skills": ["Docker", "AWS", "CI/CD"]
+  },
+  {
+    "id": 7,
+    "name": "Gabriela Santos",
+    "role": "Product Manager",
+    "skills": ["Roadmap", "Scrum", "UX Research"]
+  },
+  {
+    "id": 8,
+    "name": "Heitor Almeida",
+    "role": "Desenvolvedor Back-End",
+    "skills": ["Node", "Express", "MongoDB"]
+  },
+  {
+    "id": 9,
+    "name": "Isabela Nunes",
+    "role": "Mobile Developer",
+    "skills": ["React Native", "Expo", "JavaScript"]
+  },
+  {
+    "id": 10,
+    "name": "João Pedro",
+    "role": "Engenheiro de Nuvem",
+    "skills": ["Azure", "Terraform", "Kubernetes"]
+  },
+  {
+    "id": 11,
+    "name": "Karina Duarte",
+    "role": "Quality Assurance",
+    "skills": ["Testes Automatizados", "Cypress", "Postman"]
+  },
+  {
+    "id": 12,
+    "name": "Leonardo Rocha",
+    "role": "Desenvolvedor Full Stack",
+    "skills": ["React", "Node", "SQL"]
+  },
+  {
+    "id": 13,
+    "name": "Mariana Falcão",
+    "role": "Analista de Dados",
+    "skills": ["Python", "SQL", "Power BI"]
+  },
+  {
+    "id": 14,
+    "name": "Nicolas Azevedo",
+    "role": "Engenheiro de Software",
+    "skills": ["Java", "Spring Boot", "Docker"]
+  },
+  {
+    "id": 15,
+    "name": "Olivia Freitas",
+    "role": "UI Designer",
+    "skills": ["Figma", "Tipografia", "Layout"]
+  },
+  {
+    "id": 16,
+    "name": "Patrick Silva",
+    "role": "Desenvolvedor Front-End",
+    "skills": ["Vue", "TypeScript", "CSS"]
+  },
+  {
+    "id": 17,
+    "name": "Quezia Barros",
+    "role": "Analista de Segurança",
+    "skills": ["SOC", "SIEM", "Linux"]
+  },
+  {
+    "id": 18,
+    "name": "Rafael Pinto",
+    "role": "Arquiteto de Software",
+    "skills": ["Microserviços", "Kubernetes", "AWS"]
+  },
+  {
+    "id": 19,
+    "name": "Sabrina Moura",
+    "role": "Desenvolvedora Full Stack",
+    "skills": ["Next.js", "Prisma", "React"]
+  },
+  {
+    "id": 20,
+    "name": "Thiago Moraes",
+    "role": "Machine Learning Engineer",
+    "skills": ["TensorFlow", "Python", "MLOps"]
+  },
+  {
+    "id": 21,
+    "name": "Ursula Teixeira",
+    "role": "Scrum Master",
+    "skills": ["Agile", "SCRUM", "Kanban"]
+  },
+  {
+    "id": 22,
+    "name": "Victor Hugo",
+    "role": "DevOps Engineer",
+    "skills": ["GitHub Actions", "Docker", "AWS"]
+  },
+  {
+    "id": 23,
+    "name": "William Duarte",
+    "role": "Desenvolvedor Mobile",
+    "skills": ["Flutter", "Dart", "Firebase"]
+  },
+  {
+    "id": 24,
+    "name": "Xavier Rodrigues",
+    "role": "Engenheiro de Dados",
+    "skills": ["Spark", "Airflow", "SQL"]
+  },
+  {
+    "id": 25,
+    "name": "Yara Veloso",
+    "role": "UX Researcher",
+    "skills": ["Entrevistas", "Pesquisa", "Wireframes"]
+  },
+  {
+    "id": 26,
+    "name": "Zoe Camargo",
+    "role": "Desenvolvedora Back-End",
+    "skills": ["Go", "PostgreSQL", "Docker"]
+  },
+  {
+    "id": 27,
+    "name": "Arthur Kenji",
+    "role": "Engenheiro de IA",
+    "skills": ["Deep Learning", "Python", "NLP"]
+  },
+  {
+    "id": 28,
+    "name": "Brenda Okada",
+    "role": "Front-End Developer",
+    "skills": ["Angular", "TypeScript", "CSS"]
+  },
+  {
+    "id": 29,
+    "name": "Caio Ribeiro",
+    "role": "Cybersecurity Analyst",
+    "skills": ["Forense Digital", "Firewall", "SOC"]
+  },
+  {
+    "id": 30,
+    "name": "Daniela Lopes",
+    "role": "Product Designer",
+    "skills": ["UX", "UI", "Figma"]
   }
 ]
