@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Header({ user, setUser }) {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     if (!email || !password) return;
@@ -12,11 +15,14 @@ function Header({ user, setUser }) {
     setPassword("");
   };
 
+  const handleLogout = () => {setUser(null);};
+  const goToRegister = () => {navigate("/register");};
+  const goToProfile = () => {navigate("/profile");};
+
   return (
     <header>
       <h1>SkillHub</h1>
 
-      {/* Se NÃO estiver logado → mostra login */}
       {!user && (
         <div>
           <input
@@ -39,33 +45,15 @@ function Header({ user, setUser }) {
             </button>
           </div>
 
-          <button onClick={handleLogin}>Login</button>
-
-          {/* Link para Register */}
-          <button
-            type="button"
-            onClick={() => (window.location.href = "/register")}
-          >
-            Registrar-se
-          </button>
+          <button type="button" onClick={handleLogin}>Login</button>
+          <button type="button" onClick={goToRegister}>Registrar-se</button>
         </div>
       )}
 
       {user && (
         <div>
-          <button
-            type="button"
-            onClick={() => (window.location.href = "/profile")}
-          >
-            👤 Perfil
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setUser(null)}
-          >
-            Sair
-          </button>
+          <button type="button" onClick={goToProfile}>👤 Perfil</button>
+          <button type="button" onClick={handleLogout}>Sair</button>
         </div>
       )}
     </header>
