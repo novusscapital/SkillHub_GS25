@@ -10,19 +10,55 @@ function Header({ user, setUser }) {
 
   const handleLogin = () => {
     if (!email || !password) return;
+    if (!setUser) return; // segurança caso o prop não seja passado
+
     setUser({ email });
     setEmail("");
     setPassword("");
   };
 
-  const handleLogout = () => {setUser(null);};
-  const goToRegister = () => {navigate("/register");};
-  const goToProfile = () => {navigate("/profile");};
+  const handleLogout = () => {
+    if (!setUser) return;
+    setUser(null);
+  };
+
+  const goToHome = () => {
+    navigate("/");
+  };
+
+  const goToRegister = () => {
+    navigate("/register");
+  };
+
+  const goToProfile = () => {
+    navigate("/profile");
+  };
+
+  const goToWidgets = () => {
+    navigate("/widgets");
+  };
 
   return (
     <header>
       <h1>SkillHub</h1>
 
+      {/* Navegação "crua" (depois vira menu hambúrguer com CSS) */}
+      <nav>
+        <button type="button" onClick={goToHome}>
+          Home
+        </button>
+        <button type="button" onClick={goToProfile}>
+          Perfil
+        </button>
+        <button type="button" onClick={goToRegister}>
+          Registrar
+        </button>
+        <button type="button" onClick={goToWidgets}>
+          Widgets
+        </button>
+      </nav>
+
+      {/* Se NÃO estiver logado → mostra login */}
       {!user && (
         <div>
           <input
@@ -45,15 +81,26 @@ function Header({ user, setUser }) {
             </button>
           </div>
 
-          <button type="button" onClick={handleLogin}>Login</button>
-          <button type="button" onClick={goToRegister}>Registrar-se</button>
+          <button type="button" onClick={handleLogin}>
+            Login
+          </button>
+
+          <button type="button" onClick={goToRegister}>
+            Registrar-se
+          </button>
         </div>
       )}
 
+      {/* Se estiver logado → ícone de perfil + sair */}
       {user && (
         <div>
-          <button type="button" onClick={goToProfile}>👤 Perfil</button>
-          <button type="button" onClick={handleLogout}>Sair</button>
+          <button type="button" onClick={goToProfile}>
+            👤 Perfil
+          </button>
+
+          <button type="button" onClick={handleLogout}>
+            Sair
+          </button>
         </div>
       )}
     </header>
