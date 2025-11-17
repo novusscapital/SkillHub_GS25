@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 import Register from "./routes/Register.jsx";
 import Profile from "./routes/Profile.jsx";
+import WidgetStore from "./routes/Widget_store.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/widgets" element={<WidgetStore />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
