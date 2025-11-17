@@ -3,180 +3,1050 @@
     "id": 1,
     "name": "Ana Souza",
     "role": "Desenvolvedora Front-End",
-    "skills": ["React", "Tailwind", "JavaScript"]
+    "skills": ["React", "Tailwind", "JavaScript"],
+    "city": "São Paulo",
+    "area": "Web",
+    "photo": "/profiles/id1.jpg",
+
+    "personal": {
+      "bio": "Desenvolvedora focada em interfaces rápidas e acessíveis.",
+      "age": 26,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Tecnologia em Sistemas para Internet",
+      "institution": "FIAP",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "WebCore",
+        "role": "Front-End Jr",
+        "period": "2022 - Atual",
+        "description": "Desenvolvimento de interfaces responsivas usando React e Tailwind."
+      }
+    ],
+
+    "technicalSkills": ["React", "Tailwind", "JavaScript", "REST APIs"],
+    "softSkills": ["Comunicação", "Colaboração", "Adaptabilidade"],
+    "hobbies": ["Design digital", "Jogos", "Ciclismo"]
   },
+
   {
     "id": 2,
     "name": "Bruno Oliveira",
     "role": "Engenheiro de Dados",
-    "skills": ["Python", "SQL", "BigQuery"]
+    "skills": ["Python", "SQL", "BigQuery"],
+    "city": "Curitiba",
+    "area": "Data",
+    "photo": "/profiles/id2.jpg",
+
+    "personal": {
+      "bio": "Engenheiro de dados especializado em pipelines escaláveis.",
+      "age": 29,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia da Computação",
+      "institution": "UTFPR",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "DataLake Corp",
+        "role": "Engenheiro de Dados",
+        "period": "2021 - Atual",
+        "description": "Implementação de ETLs e otimização de performance para análise de grandes volumes."
+      }
+    ],
+
+    "technicalSkills": ["Python", "SQL", "BigQuery", "Airflow"],
+    "softSkills": ["Pensamento Analítico", "Gestão de Tempo"],
+    "hobbies": ["Xadrez", "Café especial", "Trilhas"]
   },
+
   {
     "id": 3,
     "name": "Clara Martins",
     "role": "UX/UI Designer",
-    "skills": ["Figma", "Prototipagem", "UI Design"]
+    "skills": ["Figma", "Prototipagem", "UI Design"],
+    "city": "Recife",
+    "area": "Design",
+    "photo": "/profiles/id3.jpg",
+
+    "personal": {
+      "bio": "Designer especializada em interfaces intuitivas e centradas no usuário.",
+      "age": 25,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Design Digital",
+      "institution": "CESAR School",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "PixelStudio",
+        "role": "UX/UI Designer",
+        "period": "2020 - Atual",
+        "description": "Criação de fluxos, protótipos e testes de usabilidade."
+      }
+    ],
+
+    "technicalSkills": ["Figma", "UX Research", "UI Design"],
+    "softSkills": ["Empatia", "Criatividade", "Colaboração"],
+    "hobbies": ["Ilustração", "Fotografia", "Séries"]
   },
+
   {
     "id": 4,
     "name": "Diego Ramos",
     "role": "Cientista de Dados",
-    "skills": ["Python", "Machine Learning", "Pandas"]
+    "skills": ["Python", "Machine Learning", "Pandas"],
+    "city": "Belo Horizonte",
+    "area": "Data",
+    "photo": "/profiles/id4.jpg",
+
+    "personal": {
+      "bio": "Apaixonado por dados, modelos preditivos e experimentação.",
+      "age": 31,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Estatística",
+      "institution": "UFMG",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "InsightLab",
+        "role": "Cientista de Dados",
+        "period": "2019 - Atual",
+        "description": "Desenvolvimento de modelos de aprendizado de máquina para negócios."
+      }
+    ],
+
+    "technicalSkills": ["Python", "Pandas", "Sklearn", "Machine Learning"],
+    "softSkills": ["Raciocínio Lógico", "Comunicação", "Proatividade"],
+    "hobbies": ["Corrida", "Leitura", "Análise de dados pessoais"]
   },
+
   {
     "id": 5,
     "name": "Eduarda Lima",
     "role": "Especialista em Segurança",
-    "skills": ["Pentest", "Firewall", "Linux"]
+    "skills": ["Pentest", "Firewall", "Linux"],
+    "city": "Porto Alegre",
+    "area": "Security",
+    "photo": "/profiles/id5.jpg",
+
+    "personal": {
+      "bio": "Especialista em cibersegurança com foco em resposta a incidentes.",
+      "age": 30,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Sistemas de Informação",
+      "institution": "PUCRS",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "SecureTech",
+        "role": "Analista de Segurança",
+        "period": "2020 - Atual",
+        "description": "Monitoramento, testes de intrusão e mitigação de vulnerabilidades."
+      }
+    ],
+
+    "technicalSkills": ["Pentest", "Linux", "Firewall", "SOC"],
+    "softSkills": ["Tomada de decisão", "Foco", "Rigor técnico"],
+    "hobbies": ["Jogos FPS", "Tecnologia", "Análises forenses"]
   },
+
   {
     "id": 6,
     "name": "Felipe Rocha",
     "role": "DevOps Engineer",
-    "skills": ["Docker", "AWS", "CI/CD"]
+    "skills": ["Docker", "AWS", "CI/CD"],
+    "city": "São Paulo",
+    "area": "Cloud",
+    "photo": "/profiles/id6.jpg",
+
+    "personal": {
+      "bio": "DevOps focado em pipelines estáveis e ambientes altamente disponíveis.",
+      "age": 28,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Análise e Desenvolvimento de Sistemas",
+      "institution": "Impacta",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "CloudBridge",
+        "role": "DevOps Engineer",
+        "period": "2021 - Atual",
+        "description": "Automação de processos e provisionamento de infraestrutura escalável."
+      }
+    ],
+
+    "technicalSkills": ["Docker", "AWS", "CI/CD", "Kubernetes"],
+    "softSkills": ["Liderança técnica", "Organização", "Agilidade"],
+    "hobbies": ["Automação residencial", "Ciclismo", "Café"]
   },
+
   {
     "id": 7,
     "name": "Gabriela Santos",
     "role": "Product Manager",
-    "skills": ["Roadmap", "Scrum", "UX Research"]
+    "skills": ["Roadmap", "Scrum", "UX Research"],
+    "city": "Florianópolis",
+    "area": "Product",
+    "photo": "/profiles/id7.jpg",
+
+    "personal": {
+      "bio": "PM dedicada à criação de produtos eficientes e centrados no usuário.",
+      "age": 34,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Administração",
+      "institution": "UFSC",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "ProdWise",
+        "role": "Product Manager",
+        "period": "2018 - Atual",
+        "description": "Planejamento estratégico, priorização e coordenação de equipes."
+      }
+    ],
+
+    "technicalSkills": ["Scrum", "Kanban", "UX Research", "Roadmapping"],
+    "softSkills": ["Comunicação", "Liderança", "Visão estratégica"],
+    "hobbies": ["Caminhadas", "Pintura", "Leitura"]
   },
+
   {
     "id": 8,
     "name": "Heitor Almeida",
     "role": "Desenvolvedor Back-End",
-    "skills": ["Node", "Express", "MongoDB"]
+    "skills": ["Node", "Express", "MongoDB"],
+    "city": "Campinas",
+    "area": "Web",
+    "photo": "/profiles/id8.jpg",
+
+    "personal": {
+      "bio": "Back-end com foco em APIs escaláveis e bancos NoSQL.",
+      "age": 27,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Ciência da Computação",
+      "institution": "Unicamp",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "APIWorks",
+        "role": "Back-End Developer",
+        "period": "2020 - Atual",
+        "description": "Criação de serviços Node.js e bancos MongoDB performáticos."
+      }
+    ],
+
+    "technicalSkills": ["Node.js", "Express", "MongoDB", "Docker"],
+    "softSkills": ["Resolução de problemas", "Pensamento lógico"],
+    "hobbies": ["Cozinhar", "Jogos", "Tecnologia"]
   },
+
   {
     "id": 9,
     "name": "Isabela Nunes",
     "role": "Mobile Developer",
-    "skills": ["React Native", "Expo", "JavaScript"]
+    "skills": ["React Native", "Expo", "JavaScript"],
+    "city": "Salvador",
+    "area": "Mobile",
+    "photo": "/profiles/id9.jpg",
+
+    "personal": {
+      "bio": "Dev mobile especializada em apps multiplataforma rápidos e intuitivos.",
+      "age": 24,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Tecnologia em Sistemas para Internet",
+      "institution": "UNIFACS",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "AppFactory",
+        "role": "Mobile Developer Jr",
+        "period": "2023 - Atual",
+        "description": "Desenvolvimento de aplicativos em React Native e Expo."
+      }
+    ],
+
+    "technicalSkills": ["React Native", "JavaScript", "Expo"],
+    "softSkills": ["Criatividade", "Proatividade"],
+    "hobbies": ["Yoga", "Desenho", "Música"]
   },
+
   {
     "id": 10,
     "name": "João Pedro",
     "role": "Engenheiro de Nuvem",
-    "skills": ["Azure", "Terraform", "Kubernetes"]
+    "skills": ["Azure", "Terraform", "Kubernetes"],
+    "city": "Fortaleza",
+    "area": "Cloud",
+    "photo": "/profiles/id10.jpg",
+
+    "personal": {
+      "bio": "Engenheiro de nuvem com foco em infraestrutura moderna e CI/CD.",
+      "age": 32,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia de Software",
+      "institution": "UFC",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "CloudNation",
+        "role": "Cloud Engineer",
+        "period": "2019 - Atual",
+        "description": "Gerenciamento de infraestrutura, clusters Kubernetes e pipelines."
+      }
+    ],
+
+    "technicalSkills": ["Azure", "Terraform", "Kubernetes", "Docker"],
+    "softSkills": ["Organização", "Liderança", "Clareza técnica"],
+    "hobbies": ["Surf", "Games", "Tecnologia"]
   },
+
   {
     "id": 11,
     "name": "Karina Duarte",
     "role": "Quality Assurance",
-    "skills": ["Testes Automatizados", "Cypress", "Postman"]
+    "skills": ["Testes Automatizados", "Cypress", "Postman"],
+    "city": "Rio de Janeiro",
+    "area": "Quality",
+    "photo": "/profiles/id11.jpg",
+
+    "personal": {
+      "bio": "QA focada em qualidade contínua e testes automatizados de ponta a ponta.",
+      "age": 27,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia de Software",
+      "institution": "UFRJ",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "TestLab",
+        "role": "Quality Assurance",
+        "period": "2021 - Atual",
+        "description": "Criação de testes automatizados e planos de testes funcionais e de regressão."
+      }
+    ],
+
+    "technicalSkills": ["Cypress", "Postman", "JUnit", "Testes de API"],
+    "softSkills": ["Detalhismo", "Comunicação", "Organização"],
+    "hobbies": ["Leitura", "Séries", "Cachorros"]
   },
+
   {
     "id": 12,
     "name": "Leonardo Rocha",
     "role": "Desenvolvedor Full Stack",
-    "skills": ["React", "Node", "SQL"]
+    "skills": ["React", "Node", "SQL"],
+    "city": "São Paulo",
+    "area": "Web",
+    "photo": "/profiles/id12.jpg",
+
+    "personal": {
+      "bio": "Full stack que gosta de entregar solução do front ao banco de dados.",
+      "age": 29,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Ciência da Computação",
+      "institution": "USP",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "StackHub",
+        "role": "Full Stack Developer",
+        "period": "2019 - Atual",
+        "description": "Desenvolvimento de aplicações web completas com React, Node e bancos relacionais."
+      }
+    ],
+
+    "technicalSkills": ["React", "Node.js", "SQL", "REST APIs"],
+    "softSkills": ["Resolução de problemas", "Trabalho em equipe"],
+    "hobbies": ["Games", "Podcast de tecnologia", "Cozinhar"]
   },
+
   {
     "id": 13,
     "name": "Mariana Falcão",
     "role": "Analista de Dados",
-    "skills": ["Python", "SQL", "Power BI"]
+    "skills": ["Python", "SQL", "Power BI"],
+    "city": "Recife",
+    "area": "Data",
+    "photo": "/profiles/id13.jpg",
+
+    "personal": {
+      "bio": "Analista de dados focada em gerar insights práticos para negócios.",
+      "age": 26,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Estatística",
+      "institution": "UFPE",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "InsightData",
+        "role": "Analista de Dados",
+        "period": "2020 - Atual",
+        "description": "Criação de dashboards, relatórios e análises exploratórias."
+      }
+    ],
+
+    "technicalSkills": ["SQL", "Power BI", "Python", "Excel Avançado"],
+    "softSkills": ["Pensamento crítico", "Comunicação", "Organização"],
+    "hobbies": ["Corrida de rua", "Café", "Séries policiais"]
   },
+
   {
     "id": 14,
     "name": "Nicolas Azevedo",
     "role": "Engenheiro de Software",
-    "skills": ["Java", "Spring Boot", "Docker"]
+    "skills": ["Java", "Spring Boot", "Docker"],
+    "city": "Porto Alegre",
+    "area": "Web",
+    "photo": "/profiles/id14.jpg",
+
+    "personal": {
+      "bio": "Engenheiro de software apaixonado por arquitetura limpa e performance.",
+      "age": 32,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia de Software",
+      "institution": "PUCRS",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "CodeForge",
+        "role": "Engenheiro de Software",
+        "period": "2018 - Atual",
+        "description": "Desenvolvimento de APIs robustas e manutenção de sistemas legados em Java."
+      }
+    ],
+
+    "technicalSkills": ["Java", "Spring Boot", "Docker", "Microserviços"],
+    "softSkills": ["Liderança técnica", "Comunicação clara"],
+    "hobbies": ["Games", "Leitura técnica", "Ciclismo"]
   },
+
   {
     "id": 15,
     "name": "Olivia Freitas",
     "role": "UI Designer",
-    "skills": ["Figma", "Tipografia", "Layout"]
+    "skills": ["Figma", "Tipografia", "Layout"],
+    "city": "Curitiba",
+    "area": "Design",
+    "photo": "/profiles/id15.jpg",
+
+    "personal": {
+      "bio": "UI designer focada em interfaces elegantes, limpas e funcionais.",
+      "age": 27,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Design Gráfico",
+      "institution": "PUC-PR",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "VisualLab",
+        "role": "UI Designer",
+        "period": "2021 - Atual",
+        "description": "Criação de bibliotecas de componentes, layouts e sistemas de design."
+      }
+    ],
+
+    "technicalSkills": ["Figma", "UI Design", "Design System"],
+    "softSkills": ["Criatividade", "Empatia", "Organização"],
+    "hobbies": ["Ilustração digital", "Fotografia", "Filmes"]
   },
+
   {
     "id": 16,
     "name": "Patrick Silva",
     "role": "Desenvolvedor Front-End",
-    "skills": ["Vue", "TypeScript", "CSS"]
+    "skills": ["Vue", "TypeScript", "CSS"],
+    "city": "São Paulo",
+    "area": "Web",
+    "photo": "/profiles/id16.jpg",
+
+    "personal": {
+      "bio": "Front-end focado em components reutilizáveis e performance.",
+      "age": 28,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Sistemas de Informação",
+      "institution": "Mackenzie",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "VueWorks",
+        "role": "Front-End Developer",
+        "period": "2020 - Atual",
+        "description": "Desenvolvimento de SPAs com Vue, TypeScript e integrações REST."
+      }
+    ],
+
+    "technicalSkills": ["Vue", "TypeScript", "CSS", "SPA"],
+    "softSkills": ["Colaboração", "Foco em detalhes"],
+    "hobbies": ["Basquete", "Podcasts", "Séries"]
   },
+
   {
     "id": 17,
     "name": "Quezia Barros",
     "role": "Analista de Segurança",
-    "skills": ["SOC", "SIEM", "Linux"]
+    "skills": ["SOC", "SIEM", "Linux"],
+    "city": "Brasília",
+    "area": "Security",
+    "photo": "/profiles/id17.jpg",
+
+    "personal": {
+      "bio": "Analista de segurança com experiência em monitoramento e resposta a incidentes.",
+      "age": 30,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Redes de Computadores",
+      "institution": "IFB",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "SecureOps",
+        "role": "Analista de Segurança",
+        "period": "2019 - Atual",
+        "description": "Atuação em SOC, análise de alertas e investigação de incidentes."
+      }
+    ],
+
+    "technicalSkills": ["SIEM", "Linux", "Firewall", "Monitoramento"],
+    "softSkills": ["Atenção a detalhes", "Raciocínio lógico"],
+    "hobbies": ["Jogos competitivos", "Leitura", "Café"]
   },
+
   {
     "id": 18,
     "name": "Rafael Pinto",
     "role": "Arquiteto de Software",
-    "skills": ["Microserviços", "Kubernetes", "AWS"]
+    "skills": ["Microserviços", "Kubernetes", "AWS"],
+    "city": "São Paulo",
+    "area": "Web",
+    "photo": "/profiles/id18.jpg",
+
+    "personal": {
+      "bio": "Arquiteto de software preocupado com escalabilidade e boas práticas.",
+      "age": 35,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia da Computação",
+      "institution": "UFABC",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "ArchTech",
+        "role": "Arquiteto de Software",
+        "period": "2017 - Atual",
+        "description": "Definição de arquitetura, padrões e governança técnica de sistemas."
+      }
+    ],
+
+    "technicalSkills": ["Microserviços", "AWS", "Kubernetes", "Event-Driven"],
+    "softSkills": ["Visão sistêmica", "Liderança", "Comunicação"],
+    "hobbies": ["Leitura técnica", "Café especial", "Caminhadas"]
   },
+
   {
     "id": 19,
     "name": "Sabrina Moura",
     "role": "Desenvolvedora Full Stack",
-    "skills": ["Next.js", "Prisma", "React"]
+    "skills": ["Next.js", "Prisma", "React"],
+    "city": "Florianópolis",
+    "area": "Web",
+    "photo": "/profiles/id19.jpg",
+
+    "personal": {
+      "bio": "Full stack focada em aplicações modernas com Next.js e APIs escaláveis.",
+      "age": 27,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Tecnologia em Análise e Desenvolvimento de Sistemas",
+      "institution": "IFSC",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "NextWave",
+        "role": "Full Stack Developer",
+        "period": "2022 - Atual",
+        "description": "Desenvolvimento de aplicações com Next.js, Prisma e integrações externas."
+      }
+    ],
+
+    "technicalSkills": ["Next.js", "React", "Prisma", "REST/GraphQL"],
+    "softSkills": ["Colaboração", "Criatividade"],
+    "hobbies": ["Surf", "Fotografia", "Música"]
   },
+
   {
     "id": 20,
     "name": "Thiago Moraes",
     "role": "Machine Learning Engineer",
-    "skills": ["TensorFlow", "Python", "MLOps"]
+    "skills": ["TensorFlow", "Python", "MLOps"],
+    "city": "Belo Horizonte",
+    "area": "Data",
+    "photo": "/profiles/id20.jpg",
+
+    "personal": {
+      "bio": "ML Engineer que gosta de colocar modelos em produção, não só em notebooks.",
+      "age": 31,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia de Controle e Automação",
+      "institution": "CEFET-MG",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "ModelFlow",
+        "role": "Machine Learning Engineer",
+        "period": "2019 - Atual",
+        "description": "Construção de pipelines de ML, monitoramento e implantação de modelos."
+      }
+    ],
+
+    "technicalSkills": ["TensorFlow", "Python", "MLOps", "Docker"],
+    "softSkills": ["Raciocínio analítico", "Comunicação", "Persistência"],
+    "hobbies": ["Corrida", "Séries de ficção científica", "Podcasts"]
   },
+  
   {
     "id": 21,
     "name": "Ursula Teixeira",
     "role": "Scrum Master",
-    "skills": ["Agile", "SCRUM", "Kanban"]
+    "skills": ["Agile", "SCRUM", "Kanban"],
+    "city": "São Paulo",
+    "area": "Product",
+    "photo": "/profiles/id21.jpg",
+
+    "personal": {
+      "bio": "Scrum Master dedicada a manter o time focado e o fluxo saudável.",
+      "age": 33,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Administração",
+      "institution": "FGV",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "AgileFlow",
+        "role": "Scrum Master",
+        "period": "2018 - Atual",
+        "description": "Facilitação de rituais ágeis, remoção de impedimentos e suporte ao time."
+      }
+    ],
+
+    "technicalSkills": ["Scrum", "Kanban", "Jira"],
+    "softSkills": ["Comunicação", "Escuta ativa", "Mediação de conflitos"],
+    "hobbies": ["Leitura", "Caminhadas", "Cozinhar"]
   },
+
   {
     "id": 22,
     "name": "Victor Hugo",
     "role": "DevOps Engineer",
-    "skills": ["GitHub Actions", "Docker", "AWS"]
+    "skills": ["GitHub Actions", "Docker", "AWS"],
+    "city": "Campinas",
+    "area": "Cloud",
+    "photo": "/profiles/id22.jpg",
+
+    "personal": {
+      "bio": "DevOps apaixonado por automação, monitoramento e cultura colaborativa.",
+      "age": 29,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia de Computação",
+      "institution": "Unicamp",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "PipeOps",
+        "role": "DevOps Engineer",
+        "period": "2020 - Atual",
+        "description": "Automação de pipelines com GitHub Actions e infraestrutura em AWS."
+      }
+    ],
+
+    "technicalSkills": ["GitHub Actions", "AWS", "Docker", "Monitoring"],
+    "softSkills": ["Colaboração", "Organização"],
+    "hobbies": ["Música", "Games", "Automação residencial"]
   },
+
   {
     "id": 23,
     "name": "William Duarte",
     "role": "Desenvolvedor Mobile",
-    "skills": ["Flutter", "Dart", "Firebase"]
+    "skills": ["Flutter", "Dart", "Firebase"],
+    "city": "Rio de Janeiro",
+    "area": "Mobile",
+    "photo": "/profiles/id23.jpg",
+
+    "personal": {
+      "bio": "Dev mobile focado em apps performáticos com Flutter.",
+      "age": 26,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Ciência da Computação",
+      "institution": "UFRJ",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "Mobify",
+        "role": "Mobile Developer",
+        "period": "2021 - Atual",
+        "description": "Desenvolvimento de aplicativos em Flutter integrados ao Firebase."
+      }
+    ],
+
+    "technicalSkills": ["Flutter", "Dart", "Firebase", "REST APIs"],
+    "softSkills": ["Criatividade", "Resiliência"],
+    "hobbies": ["Futebol", "Streaming", "Jogos mobile"]
   },
+
   {
     "id": 24,
     "name": "Xavier Rodrigues",
     "role": "Engenheiro de Dados",
-    "skills": ["Spark", "Airflow", "SQL"]
+    "skills": ["Spark", "Airflow", "SQL"],
+    "city": "São Paulo",
+    "area": "Data",
+    "photo": "/profiles/id24.jpg",
+
+    "personal": {
+      "bio": "Engenheiro de dados interessado em Big Data e processamento distribuído.",
+      "age": 34,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia de Computação",
+      "institution": "IME-USP",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "BigStream",
+        "role": "Engenheiro de Dados",
+        "period": "2018 - Atual",
+        "description": "Implementação de pipelines com Spark e orquestração com Airflow."
+      }
+    ],
+
+    "technicalSkills": ["Spark", "Airflow", "SQL", "Kafka"],
+    "softSkills": ["Pensamento analítico", "Foco", "Trabalho em equipe"],
+    "hobbies": ["Corrida", "Filmes", "Café"]
   },
+
   {
     "id": 25,
     "name": "Yara Veloso",
     "role": "UX Researcher",
-    "skills": ["Entrevistas", "Pesquisa", "Wireframes"]
+    "skills": ["Entrevistas", "Pesquisa", "Wireframes"],
+    "city": "Recife",
+    "area": "Design",
+    "photo": "/profiles/id25.jpg",
+
+    "personal": {
+      "bio": "UX Researcher focada em entender profundamente o comportamento do usuário.",
+      "age": 28,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Psicologia",
+      "institution": "UFPE",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "UserMind",
+        "role": "UX Researcher",
+        "period": "2020 - Atual",
+        "description": "Condução de entrevistas, testes de usabilidade e análise de jornadas."
+      }
+    ],
+
+    "technicalSkills": ["Entrevistas", "Pesquisa qualitativa", "Wireframes"],
+    "softSkills": ["Empatia", "Escuta ativa", "Comunicação"],
+    "hobbies": ["Leitura", "Séries", "Viagens"]
   },
+
   {
     "id": 26,
     "name": "Zoe Camargo",
     "role": "Desenvolvedora Back-End",
-    "skills": ["Go", "PostgreSQL", "Docker"]
+    "skills": ["Go", "PostgreSQL", "Docker"],
+    "city": "Porto Alegre",
+    "area": "Web",
+    "photo": "/profiles/id26.jpg",
+
+    "personal": {
+      "bio": "Back-end especialista em APIs de alta performance.",
+      "age": 27,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Sistemas de Informação",
+      "institution": "UFRGS",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "GoStack",
+        "role": "Back-End Developer",
+        "period": "2021 - Atual",
+        "description": "Construção de serviços em Go com PostgreSQL e Docker."
+      }
+    ],
+
+    "technicalSkills": ["Go", "PostgreSQL", "Docker", "REST APIs"],
+    "softSkills": ["Lógica", "Organização"],
+    "hobbies": ["Xadrez", "Jogos indie", "Café"]
   },
+
   {
     "id": 27,
     "name": "Arthur Kenji",
     "role": "Engenheiro de IA",
-    "skills": ["Deep Learning", "Python", "NLP"]
+    "skills": ["Deep Learning", "Python", "NLP"],
+    "city": "São Paulo",
+    "area": "Data",
+    "photo": "/profiles/id27.jpg",
+
+    "personal": {
+      "bio": "Engenheiro de IA interessado em modelos de linguagem e visão computacional.",
+      "age": 30,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Engenharia Elétrica",
+      "institution": "POLI-USP",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "AIWorks",
+        "role": "Engenheiro de IA",
+        "period": "2019 - Atual",
+        "description": "Desenvolvimento de modelos de Deep Learning para NLP e visão."
+      }
+    ],
+
+    "technicalSkills": ["Python", "Deep Learning", "NLP", "PyTorch"],
+    "softSkills": ["Curiosidade", "Persistência"],
+    "hobbies": ["Animes", "Games", "Leitura técnica"]
   },
+
   {
     "id": 28,
     "name": "Brenda Okada",
     "role": "Front-End Developer",
-    "skills": ["Angular", "TypeScript", "CSS"]
+    "skills": ["Angular", "TypeScript", "CSS"],
+    "city": "São Paulo",
+    "area": "Web",
+    "photo": "/profiles/id28.jpg",
+
+    "personal": {
+      "bio": "Front-end especializada em Angular e acessibilidade.",
+      "age": 26,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Design de Interação",
+      "institution": "FIAP",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "Frontline",
+        "role": "Front-End Developer",
+        "period": "2021 - Atual",
+        "description": "Desenvolvimento de aplicações corporativas em Angular e TypeScript."
+      }
+    ],
+
+    "technicalSkills": ["Angular", "TypeScript", "CSS", "Acessibilidade"],
+    "softSkills": ["Comunicação", "Colaboração"],
+    "hobbies": ["Desenho", "Jogos", "Música"]
   },
+
   {
     "id": 29,
     "name": "Caio Ribeiro",
     "role": "Cybersecurity Analyst",
-    "skills": ["Forense Digital", "Firewall", "SOC"]
+    "skills": ["Forense Digital", "Firewall", "SOC"],
+    "city": "Curitiba",
+    "area": "Security",
+    "photo": "/profiles/id29.jpg",
+
+    "personal": {
+      "bio": "Analista de segurança com foco em forense digital e resposta a incidentes.",
+      "age": 31,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Ciência da Computação",
+      "institution": "UFPR",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "SecureLine",
+        "role": "Cybersecurity Analyst",
+        "period": "2018 - Atual",
+        "description": "Atuação em SOC, análise forense e investigação de incidentes complexos."
+      }
+    ],
+
+    "technicalSkills": ["Forense digital", "Firewall", "Linux", "SIEM"],
+    "softSkills": ["Atenção a detalhes", "Raciocínio lógico"],
+    "hobbies": ["Jogos táticos", "Leitura", "Documentários"]
   },
+
   {
     "id": 30,
     "name": "Daniela Lopes",
     "role": "Product Designer",
-    "skills": ["UX", "UI", "Figma"]
+    "skills": ["UX", "UI", "Figma"],
+    "city": "São Paulo",
+    "area": "Design",
+    "photo": "/profiles/id30.jpg",
+
+    "personal": {
+      "bio": "Product Designer unindo UX e UI para criar experiências consistentes.",
+      "age": 29,
+      "country": "Brasil"
+    },
+
+    "academic": {
+      "degree": "Design de Produto",
+      "institution": "FAAP",
+      "status": "Concluído"
+    },
+
+    "experience": [
+      {
+        "company": "FlowDesign",
+        "role": "Product Designer",
+        "period": "2020 - Atual",
+        "description": "Atuação em discovery, protótipos e testes com usuários."
+      }
+    ],
+
+    "technicalSkills": ["UX", "UI", "Figma", "Design System"],
+    "softSkills": ["Empatia", "Comunicação", "Visão de produto"],
+    "hobbies": ["Pintura", "Viagens", "Fotografia"]
   }
+
 ]
