@@ -151,18 +151,18 @@ const Profile = () => {
     );
 
     return (
-        <main className="min-h-screen bg-gray-50 py-8">
+        <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-colors duration-200">
             <div className="container max-w-4xl mx-auto px-4">
                 {/* Cabeçalho */}
                 <div className="text-center mb-8">
-                    <h1 className="text-4xl font-bold text-gray-800 mb-4">Meu Perfil</h1>
-                    <p className="text-gray-600">Complete seu perfil profissional para se conectar com oportunidades</p>
+                    <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Meu Perfil</h1>
+                    <p className="text-gray-600 dark:text-gray-300">Complete seu perfil profissional para se conectar com oportunidades</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
                     {/* FOTO DO PERFIL */}
-                    <section className="card bg-white p-6">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <section className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-200 hover:shadow-xl">
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                             <CameraIcon />
                             Foto do Perfil
                         </h2>
@@ -174,29 +174,29 @@ const Profile = () => {
                                     <img
                                         src={profile.photo}
                                         alt="Foto do usuário"
-                                        className="w-32 h-32 rounded-full object-cover border-4 border-future-teal shadow-lg"
+                                        className="w-32 h-32 rounded-full object-cover border-4 border-blue-500 dark:border-blue-400 shadow-lg"
                                     />
                                 )}
                             </div>
 
                             {/* Controles de Upload */}
-                            <div className="flex-1 space-y-4">
+                            <div className="flex-1 space-y-4 w-full">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                         Upload de Foto
                                     </label>
                                     <input 
                                         type="file" 
                                         accept="image/*" 
                                         onChange={handlePhoto}
-                                        className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                                        className="block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 dark:file:bg-blue-900 dark:file:text-blue-300 hover:file:bg-blue-100 dark:hover:file:bg-blue-800 transition-colors duration-200"
                                     />
                                 </div>
 
                                 <button 
                                     type="button" 
                                     onClick={handleRemovePhoto}
-                                    className="flex items-center px-4 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all duration-200"
+                                    className="flex items-center px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-all duration-200"
                                 >
                                     <TrashIcon />
                                     Remover foto
@@ -206,61 +206,61 @@ const Profile = () => {
                     </section>
 
                     {/* DADOS BÁSICOS */}
-                    <section className="card bg-white p-6">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <section className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-200 hover:shadow-xl">
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                             <UserIcon />
                             Dados Básicos
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Nome Completo
                                 </label>
                                 <input
                                     type="text"
                                     value={profile.name}
                                     onChange={handleBasicChange("name")}
-                                    className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                    className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                     placeholder="Seu nome completo"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Cargo
                                 </label>
                                 <input
                                     type="text"
                                     value={profile.role}
                                     onChange={handleBasicChange("role")}
-                                    className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                    className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                     placeholder="Seu cargo atual"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Cidade
                                 </label>
                                 <input
                                     type="text"
                                     value={profile.city}
                                     onChange={handleBasicChange("city")}
-                                    className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                    className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                     placeholder="Sua cidade"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Área de Atuação
                                 </label>
                                 <input
                                     type="text"
                                     value={profile.area}
                                     onChange={handleBasicChange("area")}
-                                    className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                    className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                     placeholder="Sua área profissional"
                                 />
                             </div>
@@ -268,62 +268,62 @@ const Profile = () => {
                     </section>
 
                     {/* DADOS PESSOAIS E ACADÊMICOS */}
-                    <section className="card bg-white p-6">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <section className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-200 hover:shadow-xl">
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                             <AcademicIcon />
                             Dados Pessoais e Acadêmicos
                         </h2>
 
                         <div className="space-y-6">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Bio Profissional
                                 </label>
                                 <textarea
                                     value={profile.personal.bio}
                                     onChange={handleNestedChange("personal", "bio")}
                                     rows={4}
-                                    className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                    className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400 resize-vertical"
                                     placeholder="Conte um pouco sobre sua trajetória profissional..."
                                 />
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                         Idade
                                     </label>
                                     <input
                                         type="number"
                                         value={profile.personal.age}
                                         onChange={handleNestedChange("personal", "age")}
-                                        className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                        className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                         placeholder="Sua idade"
                                     />
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                         País
                                     </label>
                                     <input
                                         type="text"
                                         value={profile.personal.country}
                                         onChange={handleNestedChange("personal", "country")}
-                                        className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                        className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                         placeholder="Seu país"
                                     />
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                         Status Acadêmico
                                     </label>
                                     <input
                                         type="text"
                                         value={profile.academic.status}
                                         onChange={handleNestedChange("academic", "status")}
-                                        className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                        className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                         placeholder="Ex: Cursando, Concluído..."
                                     />
                                 </div>
@@ -331,27 +331,27 @@ const Profile = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                         Formação
                                     </label>
                                     <input
                                         type="text"
                                         value={profile.academic.degree}
                                         onChange={handleNestedChange("academic", "degree")}
-                                        className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                        className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                         placeholder="Ex: Bacharelado em Ciência da Computação"
                                     />
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                         Instituição
                                     </label>
                                     <input
                                         type="text"
                                         value={profile.academic.institution}
                                         onChange={handleNestedChange("academic", "institution")}
-                                        className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                        className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                         placeholder="Nome da instituição"
                                     />
                                 </div>
@@ -360,59 +360,59 @@ const Profile = () => {
                     </section>
 
                     {/* SKILLS TÉCNICAS */}
-                    <section className="card bg-white p-6">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <section className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-200 hover:shadow-xl">
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                             <SkillsIcon />
                             Skills Técnicas
                         </h2>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                 Digite suas skills técnicas separadas por vírgulas
                             </label>
                             <input
                                 type="text"
                                 value={techString}
                                 onChange={(e) => setTechString(e.target.value)}
-                                className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                 placeholder="Ex: React, Node.js, Python, AWS, Docker..."
                             />
-                            <p className="text-sm text-gray-500 mt-2">
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
                                 Exemplo: JavaScript, React, Node.js, Python, SQL
                             </p>
                         </div>
                     </section>
 
                     {/* SOFT SKILLS E HOBBIES */}
-                    <section className="card bg-white p-6">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <section className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-200 hover:shadow-xl">
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                             <SoftSkillsIcon />
                             Soft Skills e Hobbies
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Soft Skills
                                 </label>
                                 <input
                                     type="text"
                                     value={softString}
                                     onChange={(e) => setSoftString(e.target.value)}
-                                    className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                    className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                     placeholder="Ex: Liderança, Comunicação, Trabalho em equipe..."
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Hobbies
                                 </label>
                                 <input
                                     type="text"
                                     value={hobbiesString}
                                     onChange={(e) => setHobbiesString(e.target.value)}
-                                    className="input-field w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 transition-all duration-200 text-gray-800 bg-white"
+                                    className="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                                     placeholder="Ex: Leitura, Música, Esportes, Viagens..."
                                 />
                             </div>
@@ -423,7 +423,7 @@ const Profile = () => {
                     <div className="text-center">
                         <button 
                             type="submit"
-                            className="btn bg-professional-blue hover:bg-blue-700 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-200 hover:shadow-professional transform hover:-translate-y-0.5 text-lg"
+                            className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5 text-lg"
                         >
                             Salvar Perfil
                         </button>
