@@ -16,7 +16,7 @@ function App() {
 
   // objeto passado para os cards aleatórios
   const filters = { area, city, tech, q };
-
+  
   return (
     <>
       {/* Header recebe user e setUser */}
@@ -119,7 +119,7 @@ function App() {
 
           <article className="animate-fade-in">
             {/* CARDS DE CARREIRAS */}
-            <CareersCards filters={filters} />
+            <CareersCards filters={filters} user={user} />
           </article>
 
           {/* Call to Action */}
