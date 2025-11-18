@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Header({ user, setUser }) {
@@ -9,20 +9,44 @@ function Header({ user, setUser }) {
 
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  // LOGIN AGORA FALA COM O BACKEND E SALVA NO LOCALSTORAGE
+  const handleLogin = async () => {
     if (!email || !password) return;
     if (!setUser) return;
 
-    setUser({ email });
-    setEmail("");
-    setPassword("");
-    setMenuOpen(false);
+    try {
+      const res = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message || "Erro ao fazer login.");
+        return;
+      }
+
+      // salva o usuário completo (id, name, email...) no localStorage
+      localStorage.setItem("skillhub_user", JSON.stringify(data.user));
+
+      // atualiza o estado global
+      setUser(data.user);
+
+      setEmail("");
+      setPassword("");
+      setMenuOpen(false);
+    } catch (err) {
+      console.error(err);
+      alert("Erro de conexão com o servidor.");
+    }
   };
 
   const handleLogout = () => {
-    if (!setUser) return;
+    localStorage.removeItem("skillhub_user");
     setUser(null);
-    setMenuOpen(false);
+    navigate("/");
   };
 
   const goToHome = () => {
@@ -66,6 +90,19 @@ function Header({ user, setUser }) {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
     </svg>
   );
+
+  useEffect(() => {
+    const stored = localStorage.getItem("skillhub_user");
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        setUser(parsed);
+      } catch (e) {
+        console.error("Erro ao ler skillhub_user do localStorage", e);
+        localStorage.removeItem("skillhub_user");
+      }
+    }
+  }, [setUser]);
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
@@ -265,7 +302,7 @@ function Header({ user, setUser }) {
                     onChange={(e) => setPassword(e.target.value)}
                     className="flex-1 border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-gray-800 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
                   />
-                  <button 
+                  <button
                     type="button"
                     onClick={() => setShow(!show)}
                     className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-4 rounded-lg transition-all duration-200 flex items-center justify-center"
