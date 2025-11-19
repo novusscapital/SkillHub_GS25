@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import professionals from "../../../backend/data/professionals.json";
+import ChatBox from "./ChatBox";
+import defaultAvatar from "../assets/perfilgenerico.png";
 
 const CareersCards = ({ filters, user }) => {
   const [displayed, setDisplayed] = useState([]);
@@ -7,8 +9,8 @@ const CareersCards = ({ filters, user }) => {
 
   // mapa de recomendações: { [idDoProfissional]: quantidadeDeRecomendações }
   const [recommendations, setRecommendations] = useState({});
-  // lista de mensagens simuladas
-  const [messages, setMessages] = useState([]);
+  // controla se a caixinha de chat está aberta
+  const [showChat, setShowChat] = useState(false);
 
   const randomizeProfiles = () => {
     let filtered = [...professionals];
@@ -47,21 +49,21 @@ const CareersCards = ({ filters, user }) => {
 
   useEffect(() => {
     randomizeProfiles();
-    // quando filtros ou recomendações mudam, recalcula
   }, [filters, recommendations]);
 
   const handleOpenProfile = (professional) => {
     setSelected(professional);
+    setShowChat(false); // fecha chat ao trocar de perfil
   };
 
   const handleCloseProfile = () => {
     setSelected(null);
+    setShowChat(false); // fecha chat junto com o modal
   };
 
   const handleRecommend = () => {
     if (!selected) return;
 
-    // precisa estar logado
     if (!user) {
       alert("Você precisa estar logado para recomendar um profissional.");
       return;
@@ -75,7 +77,9 @@ const CareersCards = ({ filters, user }) => {
       };
     });
 
-    alert(`Você recomendou ${selected.name}. Ele ganhará prioridade nas buscas da área dele.`);
+    alert(
+      `Você recomendou ${selected.name}. Ele ganhará prioridade nas buscas da área dele.`
+    );
   };
 
   const handleSendMessage = () => {
@@ -86,29 +90,35 @@ const CareersCards = ({ filters, user }) => {
       return;
     }
 
-    const content = window.prompt(
-      `Escreva a mensagem para ${selected.name}:`
-    );
-
-    if (!content || !content.trim()) {
-      return;
-    }
-
-    const newMessage = {
-      toProfessionalId: selected.id,
-      toProfessionalName: selected.name,
-      fromUserEmail: user.email,
-      content: content.trim(),
-      createdAt: new Date().toISOString(),
-    };
-
-    setMessages((prev) => [...prev, newMessage]);
-
-    console.log("Mensagem registrada (simulação):", newMessage);
-    alert(`Mensagem enviada para ${selected.name} (simulação).`);
+    // agora apenas abre a caixinha de chat
+    setShowChat(true);
   };
 
-  // Ícones SVG (mantidos iguais)
+  const resolvePhoto = (prof) => {
+    if (!prof) return defaultAvatar;
+
+    const photo = prof.photo;
+
+    // 1) se for base64 (caso do Matheus e Miguel), usa como está
+    if (photo && photo.startsWith("data:image")) {
+      return photo;
+    }
+
+    // 2) se no futuro você tiver URL externa (http/https), usa também
+    if (photo && (photo.startsWith("http://") || photo.startsWith("https://"))) {
+      return photo;
+    }
+
+    // 3) se for um caminho absoluto tipo "/perfilgenerico.png" (public), funciona também
+    if (photo && photo.startsWith("/")) {
+      return photo;
+    }
+
+    // 4) qualquer outra coisa (tipo "../../../frontend/src/…") → ignora e usa o padrão
+    return defaultAvatar;
+  };
+
+  // Ícones SVG
   const RefreshIcon = () => (
     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -210,7 +220,7 @@ const CareersCards = ({ filters, user }) => {
       {displayed.length === 0 && (
         <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
           <SearchIcon />
-          <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+          <h3 className="text-xl font-semibold text-gray-800 dark:text:white mb-2">
             Nenhum profissional encontrado
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -225,7 +235,7 @@ const CareersCards = ({ filters, user }) => {
         </div>
       )}
 
-      {/* WRAPPER FLEX: 6 cards → 3 por linha em telas grandes */}
+      {/* Cards */}
       <div className="flex flex-wrap gap-6 justify-center">
         {displayed.map((p) => (
           <article
@@ -233,25 +243,25 @@ const CareersCards = ({ filters, user }) => {
             onClick={() => handleOpenProfile(p)}
             className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl cursor-pointer group border-2 border-transparent hover:border-teal-500 dark:hover:border-teal-400 transition-all duration-300 p-6 w-full sm:w-[48%] lg:w-[30%]"
           >
-            {/* Header do Card */}
             <div className="flex items-start space-x-4 mb-4">
-              {p.photo && (
-                <img
-                  src={p.photo}
-                  alt={p.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-gray-200 dark:border-gray-600 group-hover:border-teal-500 dark:group-hover:border-teal-400 transition-colors duration-300"
-                />
-              )}
+              <img
+                src={resolvePhoto(p)}
+                alt={p.name}
+                className="w-16 h-16 rounded-full object-cover border-2 border-gray-200 dark:border-gray-600 group-hover:border-teal-500 dark:group-hover:border-teal-400 transition-colors duration-300"
+              />
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duração-200">
+                <h3 className="text-lg font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
                   {p.name}
                 </h3>
-                <p className="text-teal-500 dark:text-teal-400 font-semibold">{p.role}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">{p.city}</p>
+                <p className="text-teal-500 dark:text-teal-400 font-semibold">
+                  {p.role}
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  {p.city}
+                </p>
               </div>
             </div>
 
-            {/* Área e ID */}
             <div className="flex items-center justify-between mb-3">
               <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                 {p.area || "Não informado"}
@@ -261,7 +271,6 @@ const CareersCards = ({ filters, user }) => {
               </span>
             </div>
 
-            {/* Skills */}
             <div className="mb-4">
               <h4 className="text-sm font-semibold text-gray-800 dark:text-white mb-2">
                 Principais Skills:
@@ -283,7 +292,6 @@ const CareersCards = ({ filters, user }) => {
               </div>
             </div>
 
-            {/* Call to Action */}
             <div className="text-center pt-3 border-t border-gray-200 dark:border-gray-600">
               <span className="text-sm text-teal-500 dark:text-teal-400 font-semibold group-hover:underline flex items-center justify-center">
                 Ver perfil completo
@@ -294,16 +302,119 @@ const CareersCards = ({ filters, user }) => {
         ))}
       </div>
 
-      {/* MODAL DE PERFIL (mantido igual, só usa handleRecommend / handleSendMessage novos) */}
+      {/* MODAL DE PERFIL */}
       {selected && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
           <div className="absolute inset-0" onClick={handleCloseProfile}></div>
 
           <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            {/* header, dados, seções... (mantém seu código existente) */}
-            {/* ... */}
-            {/* Botões de ação */}
-            <section className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+            {/* Header */}
+            <header className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
+              <div className="flex items-center gap-4">
+                <img
+                  src={resolvePhoto(selected)}
+                  alt={selected.name}
+                  className="w-16 h-16 rounded-full object-cover border-2 border-gray-200 dark:border-gray-600"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    {selected.name}
+                  </h3>
+                  <p className="text-sm text-teal-500 dark:text-teal-400 font-semibold">
+                    {selected.role || "Profissional"}
+                  </p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    ID: {selected.id} • Área: {selected.area || "Não informado"}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleCloseProfile}
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <CloseIcon />
+              </button>
+            </header>
+
+            {/* Conteúdo */}
+            <main className="px-6 py-4 space-y-6">
+              <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center text-sm text-gray-700 dark:text-gray-200">
+                  <LocationIcon />
+                  <span className="ml-2">
+                    {selected.city || "Localização não informada"}
+                  </span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 dark:text-gray-200">
+                  <BuildingIcon />
+                  <span className="ml-2">
+                    {selected.company || "Empresa não informada"}
+                  </span>
+                </div>
+              </section>
+
+              <section>
+                <h4 className="flex items-center text-sm font-semibold text-gray-800 dark:text:white mb-2">
+                  <UserIcon />
+                  <span>Sobre o profissional</span>
+                </h4>
+                <p className="text-sm text-gray-700 dark:text-gray-200">
+                  {selected.bio ||
+                    "Este profissional ainda não preencheu uma biografia detalhada."}
+                </p>
+              </section>
+
+              <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="flex items-center text-sm font-semibold text-gray-800 dark:text-white mb-2">
+                    <EducationIcon />
+                    <span>Formação</span>
+                  </h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-200">
+                    {selected.education ||
+                      "Informações de formação acadêmica não disponíveis no resumo."}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="flex items-center text-sm font-semibold text-gray-800 dark:text-white mb-2">
+                    <BriefcaseIcon />
+                    <span>Experiência</span>
+                  </h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-200">
+                    {selected.experienceSummary ||
+                      "Experiências detalhadas podem ser vistas no perfil completo."}
+                  </p>
+                </div>
+              </section>
+
+              <section>
+                <h4 className="flex items-center text-sm font-semibold text-gray-800 dark:text-white mb-2">
+                  <SkillsIcon />
+                  <span>Skills técnicas / principais competências</span>
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {selected.skills && selected.skills.length > 0 ? (
+                    selected.skills.map((skill, idx) => (
+                      <span
+                        key={idx}
+                        className="bg-purple-600 text-white text-xs px-3 py-1 rounded-full"
+                      >
+                        {skill}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="text-sm text-gray-600 dark:text-gray-300">
+                      Nenhuma skill cadastrada nesse resumo.
+                    </span>
+                  )}
+                </div>
+              </section>
+            </main>
+
+            {/* Botões */}
+            <section className="flex flex-col sm:flex-row gap-4 px-6 pb-6 pt-4 border-t border-gray-200 dark:border-gray-700 bg-gray-900/90">
               <button
                 type="button"
                 onClick={handleRecommend}
@@ -315,12 +426,22 @@ const CareersCards = ({ filters, user }) => {
               <button
                 type="button"
                 onClick={handleSendMessage}
-                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duração-200 hover:shadow-lg flex-1 text-center flex items-center justify-center"
+                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg flex-1 text-center flex items-center justify-center"
               >
                 <MessageIcon />
                 Enviar Mensagem
               </button>
             </section>
+
+            {/* Chat */}
+            {showChat && user && (
+              <ChatBox
+                loggedUserId={user.id}
+                targetUserId={selected.id}
+                targetName={selected.name}
+                onClose={() => setShowChat(false)}
+              />
+            )}
           </div>
         </div>
       )}
