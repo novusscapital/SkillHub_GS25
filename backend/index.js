@@ -16,6 +16,61 @@ const ACCOUNTS_PATH = path.join(__dirname, "data", "accounts.json");
 const PROFILES_PATH = path.join(__dirname, "data", "profiles.json");
 const PROFESSIONALS_PATH = path.join(__dirname, "data", "professionals.json");
 
+/* ----------------- mensagens ----------------- */
+const MESSAGES_PATH = path.join(__dirname, "data", "messages.json");
+
+function readMessages() {
+  return safeReadJSON(MESSAGES_PATH, []);
+}
+
+function writeMessages(msgs) {
+  safeWriteJSON(MESSAGES_PATH, msgs);
+}
+
+/**
+ * GET /api/messages/:user1/:user2
+ * Retorna as mensagens entre dois usuários
+ */
+app.get("/api/messages/:user1/:user2", (req, res) => {
+  const { user1, user2 } = req.params;
+  const messages = readMessages();
+
+  const filtered = messages.filter(
+    (m) =>
+      (m.from === Number(user1) && m.to === Number(user2)) ||
+      (m.from === Number(user2) && m.to === Number(user1))
+  );
+
+  res.json(filtered);
+});
+
+/**
+ * POST /api/messages
+ * Envia mensagem
+ */
+app.post("/api/messages", (req, res) => {
+  const { from, to, content } = req.body;
+
+  if (!from || !to || !content) {
+    return res.status(400).json({ error: "Campos inválidos." });
+  }
+
+  const messages = readMessages();
+
+  const newMessage = {
+    id: Date.now(),
+    from,
+    to,
+    content,
+    createdAt: Date.now(), // timestamp
+  };
+
+  messages.push(newMessage);
+  writeMessages(messages);
+
+  res.status(201).json(newMessage);
+});
+
 /* ----------------- helpers genéricos de leitura/escrita ----------------- */
 
 function safeReadJSON(filepath, defaultValue) {
@@ -246,6 +301,20 @@ app.put("/profiles/:userId", (req, res) => {
 
   res.json({ message: "Perfil salvo com sucesso.", profile: updated });
 });
+
+/* MENSAGENS (h)*/
+
+setInterval(() => {
+  const messages = readMessages();
+  const now = Date.now();
+
+  const filtered = messages.filter(
+    (msg) => now - msg.createdAt < 24 * 60 * 60 * 1000 // 24h
+  );
+
+  writeMessages(filtered);
+}, 60 * 1000); // roda a cada 1 minuto
+
 
 /* --------------------------- start --------------------------- */
 
