@@ -4,5 +4,11 @@
     "name": "Matheus",
     "email": "matheus@gmail.com",
     "passwordHash": "$2b$10$y/DyujgPOpLrkgpAKEhHmOC2IvGaPCVWWxUO4E/3UCprJJ9r4.RHq"
+  },
+  {
+    "id": 1763517167316,
+    "name": "Miguel Rodriguez de Ferraz",
+    "email": "Miguel@gmail.com",
+    "passwordHash": "$2b$10$be/bSuKrIIKc9xXmI9X/y.GiUvc.5crRnjpo9RfeQckvp.6D14fUq"
   }
 ]
